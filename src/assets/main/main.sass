@@ -1,0 +1,58 @@
+.main
+  display: flex
+  justify-content: space-around
+  align-items: center
+  min-height: 100vh
+  padding: 30px
+  @include mediaTabletHorizontalDown
+    flex-direction: column
+    justify-content: center
+
+.main__right
+  align-self: start
+  margin-top: 200px
+  @include mediaDesktopLargeUp
+    align-self: center
+    margin-top: 0
+  @include mediaTabletHorizontalDown
+    align-self: center
+    margin-top: 50px
+
+
+
+.main__left-down
+  display: flex
+
+
+.main__left-down-image
+  max-width: 100%
+  display: block
+  @include mediaTabletHorizontalDown
+    display: none
+
+.main__left-title
+  font-size: 50px
+  font-weight: 600
+  @include mediaMobileOnly
+    font-size: 26px
+
+
+.main__left-sup-title
+  font-size: 35px
+  font-weight: 500
+  @include mediaMobileOnly
+    font-size: 26px
+
+
+.main__left-down-text
+  font-size: 16px
+  margin-top: 53px
+  line-height: 25px
+  @include mediaTabletHorizontalDown
+    margin-top: 30px
+
+
+
+.main__left-down-purple
+  color: rgb(74, 75, 188)
+  cursor: pointer

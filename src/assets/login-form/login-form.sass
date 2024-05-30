@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap')
+
+.login-form
+  display: inline-flex
+  flex-direction: column
+  gap: 18px
+  padding: 10px
+  font-family: 'Poppins', 'sans-serif'
+
+.login-form__title
+  font-size: 30px
+  font-weight: 500
+
+.login-form__input
+  max-width: 369px
+  height: 62px
+  border-radius: 8px
+  background-color: rgb(240, 239, 254)
+  opacity: 0.7
+  border: none
+  padding: 10px
+  font-size: 16px
+  color: #333
+
+  &:focus
+    outline: none
+    box-shadow: 0 0 5px rgba(255, 192, 203, 0.5)
+
+  &:hover
+    opacity: 1
+
+  &::placeholder
+    color: rgb(148, 142, 255)
+
+.login-form__btn
+  width: 369px
+  height: 59px
+  background-color: rgb(74, 75, 188)
+  border: none
+  border-radius: 8px
+  font-size: 16px
+  padding: 10px
+  cursor: pointer
+  color: #ffffff
+  margin-top: 45px
+  @include mediaMobileLargeDown
+    max-width: 290px
+
+  &:hover
+    opacity: 1
+
+  &:active
+    box-shadow: 0 0 5px rgba(255, 192, 203, 0.5)
+
+
+.login-form__grey
+  color: #B0B0B0
+  font-weight: 400
+  text-align: right
+  cursor: pointer
+
+.login-form__title
+  font-size: 30px
+  margin-bottom: 28px
+
+.continue
+  text-align: center !important
+  margin-top: 54px
+
+
+.login-form__social-icons
+  display: flex
+  justify-content: center
+  margin-top: 45px
+  cursor: pointer
+
+.sign-form
+  display: inline-flex
+  flex-direction: column
+  gap: 18px
+  padding: 10px
+  font-family: 'Poppins', 'sans-serif'
+
+
+.login-form__password-error
+  color: red
+  font-size: 12px
