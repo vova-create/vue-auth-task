@@ -15,6 +15,11 @@
     </div>
     </div>
     <div class='main__right'>
+        <div v-if="signIn">
+          <div class="main__right-title">You can also just use fake data to log in:</div>
+          <div class="main__right-email" @click="copyToClipboard('admin@mail.com')">email: admin@mail.com</div>
+          <div class="main__right-password" @click="copyToClipboard('123456')">password: 123456</div>
+        </div>
       <div v-if='signIn' class='login-form'>
         <div class='login-form__title'>Sign in</div>
         <input class='login-form__input' type='text' v-model='email' placeholder='Enter email or user name'>
@@ -42,12 +47,14 @@
       </div>
     </div>
   </main>
+  <PopupForm ref='popup' :message='popUpText'/>
 </template>
 
 
 <script>
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth"
 import router from '../router'
+import PopupForm from '../components/PopupForm.vue'
 
 export default  {
   data() {
@@ -58,9 +65,11 @@ export default  {
       isLoggedIn: false,
       logError: '',
       regError: '',
+      popUpText:'',
     }
   },
   components: {
+    PopupForm,
   },
 
   methods: {
@@ -92,6 +101,16 @@ export default  {
           this.logError = 'The username or password you entered is incorrect'
         })
 
+    },
+    copyToClipboard(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      this.$refs.popup.show();
+      this.popUpText = `Copied to clipboard: ${text}`;
     }
   },
 
