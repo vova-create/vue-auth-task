@@ -19,6 +19,7 @@ export default {
   async created() {
     await this.getImageUrlPokemon(this.$route.params.id)
     await this.getSinglePokemon(this.$route.params.id)
+    console.log(this.$route.params.id)
   },
 
   methods: {
