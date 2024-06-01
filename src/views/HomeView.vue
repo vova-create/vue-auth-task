@@ -46,11 +46,8 @@
 
 
 <script>
-import {mapState, mapGetters} from 'vuex'
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut} from "firebase/auth"
-import { useRouter } from 'vue-router'
 import router from '../router'
-// const router = useRouter()
 
 export default  {
   data() {
@@ -87,7 +84,6 @@ export default  {
 
     async login() {
       const auth = getAuth()
-      // console.log(auth)
       await  signInWithEmailAndPassword(auth,  this.email, this.password)
         .then(() => {
           router.push('/profile')
@@ -105,14 +101,6 @@ export default  {
       this.isLoggedIn = !!user;
     })
   },
-
-  computed: {
-    ...mapState(['likes']),
-    ...mapGetters(['likesAll']),
-
-
-
-  }
 }
 
 

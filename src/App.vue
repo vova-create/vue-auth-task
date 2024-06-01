@@ -60,7 +60,6 @@ export default {
 
   &:hover
     background-color: #d910d9
-    //color: #ff9800
 
 
   &:focus

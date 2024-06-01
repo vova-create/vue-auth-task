@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Profile from '../views/Profile.vue'
 import { getAuth } from 'firebase/auth'
 import PokemonPage from '../views/PokemonPage.vue'
+import SinglePokemon from '../views/SinglePokemon.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +31,12 @@ const router = createRouter({
       path: '/pokemon',
       name: 'PokemonPage',
       component: PokemonPage,
+    },
+
+    {
+      path: '/pokemon/:id',
+      name: 'SinglePokemon',
+      component: SinglePokemon,
     },
   ]
 })
